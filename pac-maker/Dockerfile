@@ -8,7 +8,7 @@ RUN apk add --update git \
 	&& cd /pac-maker \
 	&& wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 \
 	&& mv jq-linux64 jq && chmod +x jq \
-	&& cat data.json.example | ./jq 'del(.white_list[]) | del(.black_list) | del(.special_list)' > data.json \
+	&& cat data.json.example | ./jq 'del(.white_list[]) | del(.black_list[]) | del(.special_list[])' > data.json \
 	&& mv config.json.example config.json \
 	&& rm jq
 
