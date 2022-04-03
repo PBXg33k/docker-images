@@ -3,7 +3,7 @@ FROM frosty5689/hath:latest
 EXPOSE 8384 22000/tcp 22000/udp 21027/udp
 VOLUME ["/var/syncthing", "/hath/cache", "/hath/data", "/hath/download", "/hath/log", "/hath/tmp"]
 
-RUN apk add --no-cache ca-certificates su-exec tzdata && apk upgrade -y
+RUN apk add --no-cache ca-certificates su-exec tzdata && apk upgrade
 
 # Copy golang from golang image
 COPY --from=golang:alpine /usr/local/go/ /usr/local/go/
